@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    background: #333;
+    font-family: monospace;
+}
+
+.border-red-500 {
+    --tw-border-opacity: 1;
+    border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-4 {
+    border-width: 4px;
+}
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
+}
+
+.snap-y {
+    scroll-snap-type: y var(--tw-scroll-snap-strictness);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.relative {
+    position: relative;
+}
+
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.z-40 {
+    z-index: 40;
+}
+
+.top-0 {
+    top: 0px;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.snap-center {
+    scroll-snap-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.w-screen {
+    width: 100vw;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+
+.h-full {
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.z-30 {
+    z-index: 30;
+}
+
+.relative {
+    position: relative;
+}
+
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-\[40px\] {
+    font-size: 40px;
+}
+
+.pt-40 {
+    padding-top: 10rem;
+}
+
+.pb-20 {
+    padding-bottom: 5rem;
+}
+
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex {
+    display: flex;
+}

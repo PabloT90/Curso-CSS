@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background: blue;
+}
+
+.container {
+    width: 150px;
+    height: 150px;
+    background: white;
+    font-size: 37px;
+    /*Este es el comportamiento por defecto, que muestre aunque desborde.*/
+    overflow: visible;
+    /*Con esto no mostraria lo que desborde.*/
+    /*overflow: hidden;*/
+    /*Con este lo que haria es no mostrar el contenido pero añadir unas barras de desplazamiento.*/
+    /*overflow: scroll;*/
+    /*Con este lo que haria es seguir lo que marque el navegador/dispositivo donde se esté viendo. Es mejor auto que scroll*/
+    /*overflow: auto;*/
+    /*Esto lo que haria en caso de no verse el desbordamiento seria poner unos puntos suspensivos. Por defecto es clip, que seria simplemente cortar y ya.*/
+    text-overflow: ellipsis;
+}
+
+
+
+
+/*Position*/
+/*Los elementos por defecto se posicionan de forma estatica, se quedan donde están definidos y se van apilando. position: static;*/
+/*Posicion absolute: con esto le decimos donde queremos que esté exactamente, se lo salta todo vaya.*/
+/*Position relative: crea un punto relativo para que cualquiera de nuestros hijos lo tome de referencia. 
+Cuando tenemos un position absolute de hijo va a estar buscando a todos sus padres cual de ellos es el elemento relativo.
+Si no encuentra ninguno entonces tomaria el documento.
+Son relativas al PADRE.
+*/
+
+.parent {
+    border: 5px solid black;
+    width: 250px;
+    height: 250px;
+    /*Esto se asegura de que sean 250px, es decir, no añadiria el tamaño del padding, border y demás.*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container-position {
+    background: #09f;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    /*Position: fixed se va a poner de forma relativa a la PANTALLA, por lo que el position relative de antes no nos valdria para nada */
+    /*De esta forma centramos el cuadrado en el centro. Esta manera no es la mas recomendable de forma general pero puede ser interesante para centrar modales.*/
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*forma corta de centrarlo y nos ahorramos las 4 propiedades de arriba: inset: 0;*/
+    /*Junto a la anterior esto lo centraria*/
+    margin: auto;
+}
+
+/*
+Diferencia entre fixed y sticky
+El sticky si que tiene en cuenta el relative y mantendrá al elemento en su posicion a medida que se hace scroll en pantalla
+pero el elemento se mantiene en el padre. Es decir, a medida que se scrollea se mueve manteniendo su posicion dentro del padre.
+*/
+
+.sticky {
+    background: #09f;
+    width: 100px;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}

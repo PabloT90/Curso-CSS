@@ -1,0 +1,115 @@
+
+/* Forma 1 que ha funcionado
+body {
+    margin: 0;
+    background: grey;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.container div {
+    background: #09f;
+    border-radius: 20px;
+}
+
+.container div:first-child {
+    grid-column-start: span 2;
+}
+
+.container div:nth-child(3) {
+    grid-row-start: span 2;
+}
+
+.container div:nth-child(4) {
+    grid-row-start: span 2;
+}
+
+.container div:nth-child(6) {
+    grid-row-start: span 2;
+    grid-column-start: span 3;
+}
+
+.container div:nth-child(9) {
+    grid-column-start: span 2;
+}
+
+*/
+
+/*Segunda forma que funciona esta vez de forma visual. Me parece mas mantenible si queremos hacer media querys*/
+body {
+    gap: 10px;
+    background: grey;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    grid-template-areas: 
+    /*Con esto posiciono todos los elementos de forma visual*/
+    "uno uno dos tres cuatro cinco"
+    "seis seis seis tres cuatro siete"
+    "seis seis seis ocho nueve nueve";
+}
+
+.container div {
+    background: #09f;
+    border-radius: 20px;
+}
+
+.container div:first-child {
+    grid-area: uno;
+}
+
+.container div:nth-child(2) {
+    grid-area: dos;
+}
+
+.container div:nth-child(3) {
+    grid-area: tres;
+}
+
+.container div:nth-child(4) {
+    grid-area: cuatro;
+}
+
+.container div:nth-child(5) {
+    grid-area: cinco;
+}
+
+.container div:nth-child(6) {
+    grid-area: seis;
+}
+
+.container div:nth-child(7) {
+    grid-area: siete;
+}
+
+.container div:nth-child(8) {
+    grid-area: ocho;
+}
+
+.container div:nth-child(9) {
+    grid-area: nueve;
+}
+
+@media(width < 800px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+        "uno dos dos"
+        "uno tres tres"
+        "cuatro cuatro cuatro"
+        "cinco cinco seis"
+        "siete ocho nueve"
+    }
+}

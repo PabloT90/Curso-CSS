@@ -1,0 +1,40 @@
+.link {
+    color: red;
+}
+
+.link:hover {
+    border: 3px solid red;
+}
+
+.link-outline {
+    color: red;
+}
+
+.link-outline:hover {
+    outline: 3px solid red;
+}
+
+/*Está activo cuando se hace click*/
+.link:active {
+    color: blue;
+}
+
+article {
+    font-size: 24px;
+}
+
+/*El simbolo > significa que le va a aplicar el color al elemento P que esté directamente debajo del article. Por lo que el P del footer no se ve afectado.*/
+article > p {
+    color: blue;
+}
+
+/*El simbolo ~ significa que el estilo se va a aplicar a los span que vaya precedidos de un p, puede haber un elemento de por medio y se seguiria aplicando*/
+p ~ span {
+    color: blueviolet;
+}
+
+/*El simbolo ~ significa que el estilo se va a aplicar a los span que vaya precedido de un P. Es decir, tiene que ser si o si un p seguido de span. Si hay elementos de por medio no se aplica.*/
+p + span {
+    color: blueviolet;
+}
+

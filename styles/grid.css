@@ -1,0 +1,33 @@
+body {
+    background: grey;
+}
+
+.container {
+    background: salmon;
+    border: 3px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*Le dice que todas las filas tienen 40px de alto.*/
+    grid-auto-rows: 40px;
+}
+
+.container div {
+    background: lightblue;
+    border: 2px solid #09f;
+    border-radius: 5px;
+}
+
+img {
+    /*Ocupa todo el ancho de la cuadricula*/
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.ejemploColumnas {
+    display: grid;
+    /* Va a poner tantas columnas como quepan pero que mantenga la regla de que el minimo son 200px */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}

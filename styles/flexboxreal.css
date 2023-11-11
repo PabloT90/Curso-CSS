@@ -1,0 +1,94 @@
+/*
+Diferencia entre flex y grid:
+GRID es una cuadricula.
+Flex solo trabaja en una direccion, o fila o columna.
+*/
+
+.parent {
+    /*Este se usa en el contenedor, no en el hijo
+    De esta manera, los items si que se veria afectado por el ancho y alto.*/
+    display: flex;
+    /*Le da la vuelta*/
+    flex-direction: row;
+    /*Si no hay suficiente espacio en el contenedor entonces hace pequeño el cotnenido. Si queremos que de un salto de linea entonces seria solo wrap*/
+    flex-wrap: nowrap;
+}
+
+.item {
+    border: 1px solid black;
+    opacity: 0.9;
+    height: 100px;
+    background: #09f;
+    /*Si le ponemos el display: inline; entonces no se veria afectado por la altura y el ancho, sino que ocuparia lo que ocupe el texto*/
+
+    /*Valores por defecto:
+    flex-grow: 0; Los elementos no crecen.
+    flex-shrink: 1; Los elementos pueden reducir su tamaño a un tamañlo mas pequeño que su flex-basis
+    flex-basis: auto;
+    */
+    /*Con esto hago que se ajusten al contenido del padre*/
+    flex-grow: 1;
+    flex-shrink: 1;
+    /*Con esto a 0 hago que todos tengan el mismo espacio, con el auto no lo tendrian.i*/
+    flex-basis: 0;
+
+    /*Una forma abreviada de hacer todo esto seria con flex: 1;*/
+}
+
+.item:first-child {
+    background: yellow;
+}
+
+.item:last-child {
+    background: red;
+}
+
+/*Ejemplo de ejercicio tipico*/
+body {
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-areas:
+        /*Con esto posiciono todos los elementos de forma visual*/
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+
+/*Para dispositivos moviles quiero que haya 2 sidebars*/
+@media(width > 400px) {
+    .container {
+        grid-template-areas:
+            /*Con esto posiciono todos los elementos de forma visual*/
+            "header header header"
+            "main main sidebar"
+            "footer footer footer";
+    }
+}
+
+.container header {
+    background: #09f;
+    grid-area: header;
+}
+
+.container aside {
+    background: yellow;
+    grid-area: sidebar;
+}
+
+.container main {
+    background: red;
+    grid-area: main;
+}
+
+.container footer {
+    background: black;
+    grid-area: footer;
+    /*Con esto va de punta a punta*/
+    /*grid-column: 1 / -1;*/
+}
