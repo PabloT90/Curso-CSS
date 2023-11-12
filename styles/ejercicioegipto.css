@@ -1,0 +1,97 @@
+/*En el ejercicio no se puede usar flex, ni grid, ni nada no dado en clase.*/
+body {
+    margin: 0;
+    padding: 0;
+    background: pink;
+}
+
+h1 {
+    text-align: center;
+}
+
+.corazones {
+    /*
+    Hago que ocupe todo el viewport dealto y el 10% del ancho de la pantalla.
+    */
+    width: 10%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.izq {
+    background-size: contain;
+    background-repeat: repeat-y;
+    margin-right: 10px;
+    background-image: url('../resources/img/corazon1.svg');
+}
+
+.der {
+    right: 0;
+    background-image: url('../resources/img/corazon2.svg');
+}
+
+.cuadro-amarillo {
+    overflow: hidden;
+    position: relative;
+    width: 78%;
+    height: 50vh;
+    border: 1px solid black;
+    margin-left: 11%;
+    /*Para que la caja tenga las medidas dadas por width y height aun teniendo el border.*/
+    box-sizing: border-box;
+    background-image: url('../resources/img/hexagonos.jpg');
+    background-repeat: repeat;
+    margin-bottom: 10px;
+}
+
+.cuadro-amarillo img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.cuadro-amarillo p {
+    font-size: 150%;
+    font-weight: bold;
+    color: brown;
+    position: absolute;
+    /*Centramos el texto al medio vertical y horizontalmente*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cuadro-azul {
+    overflow: hidden;
+    position: relative;
+    width: 78%;
+    height: 50vh;
+    border: 1px solid black;
+    margin-left: 11%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-image: url('../resources/img/estrellas.png');
+    background-repeat: repeat;
+}
+
+.cuadro-azul div {
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    bottom: 0;
+    background-image: url('../resources/img/caballo.svg');
+    background-repeat: repeat;
+}
+
+.cuadro-azul p {
+    font-size: 150%;
+    font-weight: bold;
+    color: rgb(7, 84, 7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
