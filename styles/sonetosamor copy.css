@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: pink;
+}
+
+h1 {
+    text-align: center;
+}
+
+.corazones {
+    /*Hago que ocupe todo el viewport dealto y el 10% del ancho de la pantalla.*/
+    width: 10%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.izq {
+    background-size: contain;
+    background-repeat: repeat-y;
+    margin-right: 10px;
+    background-image: url('../resources/img/corazon1.svg');
+}
+
+.der {
+    right: 0;
+    background-image: url('../resources/img/corazon2.svg');
+}
+
+.cuadro-amarillo {
+    overflow: hidden;
+    /*Lo solucion que se me ha ocurrido es darle a las columnas de corazones un ancho del 10% del viewport
+    Entonces el margen a la derecha tiene que ser igual o superior al tamaño de la columna.
+    Y el width será 100% - 10% + 10% = 80% y le resto un poquito para simular el margin, no se me ocurria otra manera.*/
+    width: 78%;
+    min-height: 45vh;
+    border: 1px solid black;
+    margin-left: 11%;
+    /*Para que la caja tenga las medidas dadas por width y height aun teniendo el border.
+    El funcionamiento normal es que si por ejemplo tenemos un ancho de 100px y un borde de 5px el tamaño total serian 105px. 
+    Con esta propiedad seguiria teniendo los 100px dados por el ancho pero pintando ademas el borde*/
+    box-sizing: border-box;
+    background: url('../resources/img/ojo.svg') no-repeat,
+                url('../resources/img/hexagonos.jpg');
+    background-position: center;
+    background-size: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cuadro-amarillo p {
+    font-size: 150%;
+    font-weight: bold;
+    color: brown;
+}
+
+.cuadro-azul {
+    /*Sigue la misma logica que cuadro-amarillo*/
+    overflow: hidden;
+    width: 78%;
+    min-height: 45vh;
+    border: 1px solid black;
+    margin-left: 11%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background: url('../resources/img/caballo.svg') repeat-x bottom,
+                url('../resources/img/estrellas.png') repeat;
+    background-size: 100px;
+    text-align: center;
+}
+
+.cuadro-azul p {
+    font-size: 150%;
+    font-weight: bold;
+    color: rgb(7, 84, 7);
+}
