@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .mitad {
+    /*Con esto hacemos que ambas mitades ocupen lo mismo*/
+    flex: 1;
+    border: 2px solid red;
+    overflow: hidden;
+}
+
+.logo {
+    height: auto;
+    width: 100%;
+    background-size: cover;
+}
+
+.botonera {
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    width: 50%;
+    min-width: 50%;
+}
+
+.botonera a {
+    color: black;
+    background: white;
+    border-radius: 10px;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+}

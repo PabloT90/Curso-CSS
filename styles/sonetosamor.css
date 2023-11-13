@@ -1,4 +1,3 @@
-/*En el ejercicio no se puede usar flex, ni grid, ni nada no dado en clase.*/
 body {
     margin: 0;
     padding: 0;
@@ -10,9 +9,7 @@ h1 {
 }
 
 .corazones {
-    /*
-    Hago que ocupe todo el viewport dealto y el 10% del ancho de la pantalla.
-    */
+    /*Hago que ocupe todo el viewport dealto y el 10% del ancho de la pantalla.*/
     width: 10%;
     height: 100vh;
     position: fixed;
@@ -34,11 +31,16 @@ h1 {
 .cuadro-amarillo {
     overflow: hidden;
     position: relative;
+    /*Lo solucion que se me ha ocurrido es darle a las columnas de corazones un ancho del 10% del viewport
+    Entonces el margen a la derecha tiene que ser igual o superior al tamaño de la columna.
+    Y el width será 100% - 10% + 10% = 80% y le resto un poquito para simular el margin, no se me ocurria otra manera.*/
     width: 78%;
-    height: 50vh;
+    height: 45vh;
     border: 1px solid black;
     margin-left: 11%;
-    /*Para que la caja tenga las medidas dadas por width y height aun teniendo el border.*/
+    /*Para que la caja tenga las medidas dadas por width y height aun teniendo el border.
+    El funcionamiento normal es que si por ejemplo tenemos un ancho de 100px y un borde de 5px el tamaño total serian 105px. 
+    Con esta propiedad seguiria teniendo los 100px dados por el ancho pero pintando ademas el borde*/
     box-sizing: border-box;
     background-image: url('../resources/img/hexagonos.jpg');
     background-repeat: repeat;
@@ -56,18 +58,19 @@ h1 {
     font-weight: bold;
     color: brown;
     position: absolute;
-    /*Centramos el texto al medio vertical y horizontalmente*/
+    /*Centramos el texto vertical y horizontalmente*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
     text-align: center;
 }
 
 .cuadro-azul {
+    /*Sigue la misma logica que cuadro-amarillo*/
     overflow: hidden;
     position: relative;
     width: 78%;
-    height: 50vh;
+    height: 45vh;
     border: 1px solid black;
     margin-left: 11%;
     margin-bottom: 10px;
@@ -92,6 +95,6 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
     text-align: center;
 }
