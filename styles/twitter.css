@@ -25,9 +25,16 @@ a {
 }
 
 .logo {
+    display: flex;
+    border: 2px solid violet;
+    justify-content: center;
+}
+
+.img-logo {
+    border: 2px solid green;
     height: auto;
-    width: 100%;
-    background-size: cover;
+    width: 40%;
+    background-size: auto;
 }
 
 .botonera {
@@ -36,12 +43,41 @@ a {
     flex-direction: column;
     width: 50%;
     min-width: 50%;
+    border: 2px solid red;
 }
 
 .botonera a {
     color: black;
     background: white;
-    border-radius: 10px;
-    padding: 5px 30px;
+    border-radius: 20px;
+    padding: 10px 30px;
     margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.separador {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.separador p{
+    margin: 0px 10px;
+}
+
+.separador span {
+    flex: 1;
+    height: 1px;
+    background: grey;
+}
+
+@media(width < 900px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
