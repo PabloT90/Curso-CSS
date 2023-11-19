@@ -1,0 +1,70 @@
+/*
+Existen 2 formas: animaciones y transiciones.
+
+Queremos que transicione de un estado inicial a uno final. Un ejemplo podria ser: un "a" basico (estado base) y cuando hacemos hover (estado final). Ya tendriamos 2 estados por lo que podriamos transicionar.
+Las sombras con bastante costosas de animar, evitar en la medida de lo posible.
+Puedo seleccionar las propiedades que quiero animar con el "transition-property: scale, background"
+*/
+
+.pulser {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    position: relative;
+    transition-duration: 2s;
+    /*Tipo de animacion que quiero*/
+    transition-timing-function: ease;
+    opacity: 0;
+    /*Una forma corta de hacerlo y ademas poder animar cada cosita por separado seria
+    transition: background 300ms linear,
+                scale 500ms ease-in-out;*/
+}
+
+section {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+section:hover .pulser {
+    opacity: 1;
+}
+
+.pulser:first-child {
+    transition-delay: 0s;
+}
+
+.pulser:nth-child(2) {
+    transition-delay: .5s;
+}
+
+.pulser:nth-child(3) {
+    transition-delay: 1s;
+}
+
+
+/*Ejemplo con keyframes*/
+@keyframes move {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(100px);
+    }
+}
+
+.pulser2 {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    position: relative;
+    animation: move;
+    animation-duration: 3s;
+    /*Para que el elemento empiece y termine donde digamos en la animacion.*/
+    animation-fill-mode: both;
+}

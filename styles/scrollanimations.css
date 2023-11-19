@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    background: #333;
+}
+
+.progreso {
+    position: fixed;
+    top: 0;
+    /*Vamos a hacer que el ancho aumente a medida que hacemos scroll.*/
+    width: 0%;
+    background: red;
+    height: 1em;
+
+    animation: progress-grow auto linear;
+    /*Le decimos que tenga en cuenta el scroll vertical (block) y en la raiz (raiz)*/
+    animation-timeline: scroll(root block);
+}
+
+@keyframes progress-grow {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/*Galeria de imagenes*/
+section {
+    columns: 2;
+    padding: 16px 32px;
+    column-gap: 32px;
+}
+
+img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+    /*Queremos que cuando termine la animacion se quede el elemento en su estado final, de ahí el both*/
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    padding: 16px;
+    width: 100%;
+    top: 0;
+    position: sticky;
+
+    animation: enhance-header linear both;
+    animation-timeline: scroll(root block);
+    /*La animacion va a ir de 0 a 200px. Asi termina de hacer la animacion cuando llega a los 200px y no al final del scroll*/
+    animation-range: 0 200px;
+    z-index: 1;
+}
+
+@keyframes enhance-header {
+    to {
+        background: rgba(255, 255, 255, .4);
+        backdrop-filter: blur(5px);
+        font-size: 18px;
+        color: black;
+    }
+}
+
+@keyframes reveal {
+    from {
+        translate: 0 50px;
+        opacity: 0;
+        scale: .5;
+    }
+
+    to {
+        translate: 0 0px;
+        opacity: 1;
+        scale: 1;
+    }
+}
