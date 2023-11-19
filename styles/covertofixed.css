@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    padding-top: 100vh;
+}
+
+.imagen-header {
+    background: url('../resources/img/undead-unluck-titelbild.png') center/cover no-repeat;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    animation: enhance-header linear forwards;
+    /*Le decimos que tenga en cuenta el scroll vertical (block) y en la raiz (raiz)*/
+    animation-timeline: scroll();
+    animation-range: 0vh 90vh;
+    margin-bottom: 20px;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes enhance-header {
+    from {
+        height: 100vh;
+	}
+
+    to {
+		height: 10vh;
+    }
+}

@@ -11,7 +11,7 @@ body {
     background: red;
     height: 1em;
 
-    animation: progress-grow auto linear;
+    animation: progress-grow auto both;
     /*Le decimos que tenga en cuenta el scroll vertical (block) y en la raiz (raiz)*/
     animation-timeline: scroll(root block);
 }
